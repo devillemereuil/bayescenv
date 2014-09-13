@@ -22,4 +22,4 @@ FORMS    += gui.ui
 CONFIG+=/openmp
 
 QMAKE_CXXFLAGS+= -fopenmp
-QMAKE_LFLAGS +=  -fopenmp
+QMAKE_LFLAGS +=  -fopenmp -lpthread -static-libgcc -static-libstdc++

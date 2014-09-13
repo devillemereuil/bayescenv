@@ -1,7 +1,7 @@
 # BayeScan makefile
 
 bayescenv: start.o beta.o dirichlet.o RJupdates.o MHupdates.o likelihood.o read_write.o anyoption.o 
-	g++ -fopenmp -O3 -static -lpthread -o bayescenv start.o beta.o dirichlet.o RJupdates.o MHupdates.o likelihood.o read_write.o anyoption.o 
+	g++ -fopenmp -lpthread -static-libgcc -static-libstdc++ -O3 -o bayescenv start.o beta.o dirichlet.o RJupdates.o MHupdates.o likelihood.o read_write.o anyoption.o
 
 start.o: start.cpp errors.cpp anyoption.h global_defs.h
 	g++ -fopenmp -O3 -c start.cpp errors.cpp 
