@@ -1,0 +1,5 @@
+.directory
+*/source.kdev4
+*.metadata*
+*.kdev4*
+*.settings*
