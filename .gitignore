@@ -2,4 +2,6 @@
 */source.kdev4
 *.kdev*
 *.o*
+*.zip
+*.tar.gz
 source/bayescenv
