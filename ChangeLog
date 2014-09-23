@@ -1,4 +1,10 @@
-** v0.1 (alpha):
+** v0.2 (alpha2):
+- Some cleaning regarding versionning and the Makefiles
+- Tested binaries for Linux, Mac and Windows. Command line binaries SHOULD work immediately. If not, please open an issue.
+- GUI still not available for Mac OS X.
+
+
+** v0.1 (alpha1):
 - Cleaned for public release
 - First commit on GitHub
 - GUI and Binaries working on Linux and Windows
