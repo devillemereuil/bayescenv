@@ -1,5 +1,5 @@
 .directory
 */source.kdev4
-*.metadata*
-*.kdev4*
-*.settings*
+*.kdev*
+*.o*
+source/bayescenv
