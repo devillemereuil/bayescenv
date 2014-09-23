@@ -43,8 +43,6 @@ AnyOption *opt = new AnyOption();
 int main(int argc, char **argv)
 {
   
-    cout << "This is BayeScEnv v 0.1 (alpha1) -- not ready for public release!" << endl;
-
     int last_printf=0;
     int acc_rate;
     int cur_out=0;
