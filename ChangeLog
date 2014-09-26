@@ -1,3 +1,8 @@
+** v0.3 (beta):
+- GUI available for Mac OS X
+- Should be ready to use (but still in beta)
+
+
 ** v0.2 (alpha2):
 - Some cleaning regarding versionning and the Makefiles
 - Tested binaries for Linux, Mac and Windows. Command line binaries SHOULD work immediately. If not, please open an issue.
