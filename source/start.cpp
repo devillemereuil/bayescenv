@@ -86,7 +86,7 @@ int main(int argc, char **argv)
     opt->addUsage( " -od .        Output file directory, default is the same as program file" );
     opt->addUsage( " -o alleles   Output file prefix, default is input file without the extension" );
     opt->addUsage( " -fstat       Only estimate F-stats (no selection)" );
-    opt->addUsage( " -all_trace   Write out MCMC trace also for alpha (and g) paremeters (can be a very large file)" );	
+    opt->addUsage( " -all_trace   Write out MCMC trace also for alpha and g parameters (can be a very large file)" );	
 	opt->addUsage( " --------------------------- " );
 	opt->addUsage( " | Parameters of the chain | " );
 	opt->addUsage( " --------------------------- " );	
