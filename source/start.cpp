@@ -681,6 +681,40 @@ int main(int argc, char **argv)
     for (int k=0;k<nb_pilot;k++)
     {
 // pilot runs
+      // re-initialize acc rates
+
+        acc_a_p=0;
+
+        if (codominant==0.5)
+        {
+            for (int i=0; i < I; i++)   // selection2
+            {
+                acc_mu[i]=0;
+                acc_delta[i]=0;
+                acc_sigma1[i]=0;
+                acc_sigma2[i]=0;
+            }
+        }
+
+        for (int i=0; i < I; i++)   // selection2
+        {
+            acc_alpha[i]=0;
+            acc_g[i]=0;					//revision env1 (PdV)
+            acc_freq_ancestral[i]=0;
+        }
+        for (int j=0; j < J; j++)   // selection2
+        {
+            acc_beta[j]=0;
+            if (codominant<1)
+                acc_f[j]=0;
+        }
+        for (int i=0; i < I; i++)   // selection2
+        {
+            for (int j=0; j < J; j++)   // selection2
+            {
+                acc_freq[i][j]=0;
+            }
+        }
     
         for (iter=0;iter<pilot_length;++iter)
         {
@@ -873,43 +907,6 @@ int main(int argc, char **argv)
                 var_prop_a_p/=1.2;
         }
 
-
-
-// re-initialize acc rates
-
-        acc_a_p=0;
-
-        if (codominant==0.5)
-        {
-            for (int i=0; i < I; i++)   // selection2
-            {
-                acc_mu[i]=0;
-                acc_delta[i]=0;
-                acc_sigma1[i]=0;
-                acc_sigma2[i]=0;
-            }
-        }
-
-        for (int i=0; i < I; i++)   // selection2
-        {
-            acc_alpha[i]=0;
-            acc_g[i]=0;					//revision env1 (PdV)
-            acc_freq_ancestral[i]=0;
-        }
-        for (int j=0; j < J; j++)   // selection2
-        {
-            acc_beta[j]=0;
-            if (codominant<1)
-                acc_f[j]=0;
-        }
-        for (int i=0; i < I; i++)   // selection2
-        {
-            for (int j=0; j < J; j++)   // selection2
-            {
-                acc_freq[i][j]=0;
-            }
-        }
-
     } // end of pilot runs
     is_pilot=false;
     
@@ -934,9 +931,9 @@ int main(int argc, char **argv)
     {
         outprop << endl;
 // write the results of the pilot runs in outprop file
-        outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of alpha proposal: " << var_prop_alpha[0] << "\n";
-        outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of beta proposal: " << var_prop_beta[0] << "\n";
-	outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "'Variance' of g proposal: " << e_g[0] << "\n";
+//         outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of alpha proposal: " << var_prop_alpha[0] << "\n";
+//         outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of beta proposal: " << var_prop_beta[0] << "\n";
+// 	outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "'Variance' of g proposal: " << e_g[0] << "\n";
 // selection2
         if (codominant<1) outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of a proposal: " << var_prop_a_p << "\n";
         if (codominant<1) outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of allele freq proposal: " << e_freq[0][0] << "\n";
@@ -946,15 +943,23 @@ int main(int argc, char **argv)
         if (codominant==0.5) outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of sigma2 proposal: " << var_prop_sigma2[0] << "\n";
         outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Variance of ancestral allele freq proposal: " << e_ancestral[0] << "\n";
 
-        for (int i=0;i<I;i++)
+       for (int j=0;j<J;j++) {
+	 outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Final acceptance rate and proposal variance for beta_" << (j+1) << " : " << acc_beta[j]/(pilot_length) << ", " << var_prop_beta[j] << "\n";
+       }
+	
+       for (int i=0;i<I;i++)
         {
-            if (!discarded_loci[i])
-	        outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Mean and variance alpha_" << (i+1) << " RJ proposal: " << mean_alpha[i] << " , " << var_alpha[i] << "\n";
+            if (!discarded_loci[i]) {
+	        outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Rough posterior mean and variance alpha_" << (i+1) << " : " << mean_alpha[i] << " , " << var_alpha[i] << "\n"; 
+	        outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Final acceptance rate and proposal variance for alpha_" << (i+1) << " : " << acc_alpha[i]/(pilot_length) << ", " << var_prop_alpha[i] << "\n";
+	    }
         }
 	for (int i=0;i<I;i++)
 	{
-	      if (!discarded_loci[i])
+	      if (!discarded_loci[i]) {
 		  outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Mean and variance g_" << (i+1) << " RJ proposal: " << mean_g[i] << " , " << var_g[i] << "\n";
+		  outprop << setw(3) << setprecision(3) << setiosflags(ios::showpoint) << "Final acceptance rate for g_" << (i+1) << " : " << acc_g[i]/(pilot_length) << ", " << e_g[i] << "\n";
+	      }
 	}
         outprop.close();
     }
