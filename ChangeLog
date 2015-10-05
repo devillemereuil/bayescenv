@@ -1,3 +1,9 @@
+** v1.0:
+- New "_prop.txt" output, with more information regarding the proposal of the parameters after the pilot runs.
+
+** v0.4 (beta2):
+- Fixed bug in Mac binary
+
 ** v0.3 (beta):
 - GUI available for Mac OS X
 - Should be ready to use (but still in beta)
