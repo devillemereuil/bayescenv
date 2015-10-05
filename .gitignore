@@ -5,3 +5,7 @@
 *.zip
 *.tar.gz
 source/bayescenv
+test/data_codominantSNP_AccRte.txt
+test/data_codominantSNP_fst.txt
+test/data_codominantSNP_Verif.txt
+test/data_codominantSNP.sel
