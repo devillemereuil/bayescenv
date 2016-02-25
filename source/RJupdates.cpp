@@ -29,7 +29,6 @@
 
 using namespace std;
 
-//TODO Write the function jump_3model for dominant data
 //Jump between the 3 models for dominant (beta, alpha+beta, beta+gamma)
 void jump_3model()
 {
@@ -102,7 +101,8 @@ void jump_3model()
                 // calculate old and new value of theta
                 new_theta=exp(-(alpha[i]+beta[j]+g[i]*X[j]));
                 old_theta=exp(-(old_alpha+beta[j]+old_g*X[j]));
-		
+       
+
                 A+= gammaln(new_theta)-gammaln(old_theta)
                     - gammaln(new_theta*freq_ancestral[i]) + gammaln(old_theta*freq_ancestral[i])
                     - gammaln(new_theta*(1-freq_ancestral[i])) + gammaln(old_theta*(1-freq_ancestral[i]))
@@ -159,8 +159,7 @@ void jump_3model()
             }
 
             r=randgen_parallel[omp_get_thread_num()].randDblExc();
-
-
+	    
 // reject proposed value
             if (log(r)>A)
             {

@@ -746,12 +746,12 @@ int main(int argc, char **argv)
                 }*/
                 if (codominant<1) //selection2
                 {
-                       update_alpha();
+			update_alpha();
 			update_g();
                 }
 		else
 		{
-                       update_alpha_codominant();
+			update_alpha_codominant();
 			update_g_codominant();
 			    
 		}
