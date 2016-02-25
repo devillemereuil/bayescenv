@@ -64,6 +64,8 @@ int main(int argc, char **argv)
     string env_filename;	//revision env1 (PdV)
     string odir="";
     string file_prefix;
+    
+    cout << "This is BayeScEnv version 1.1." << endl;
 
     /* 2. SET PREFERENCES  */
     opt->noPOSIX(); /* do not check for POSIX style character options */
