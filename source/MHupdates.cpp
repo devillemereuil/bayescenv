@@ -454,9 +454,8 @@ void update_g()
     #pragma omp parallel for SCHED_I private(r, A, old_g, e,new_theta,old_theta)
     for (int i=0; i<I; i++)
     {
-        if (!discarded_loci[i] && g_included)
+        if (!discarded_loci[i] && g_included[i])
         {
-
             // store old value
             old_g=g[i];
 
