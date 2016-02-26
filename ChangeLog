@@ -1,8 +1,12 @@
+** v1.1:
+- Issue #2 fixed: swapped defaults for pi and p
+- Issue #3 fixed: g was always updated for dominant data resulting in low q-values for all loci
+
 ** v1.0:
 - New "_prop.txt" output, with more information regarding the proposal of the parameters after the pilot runs.
 
 ** v0.4 (beta2):
-- Fixed bug in Mac binary
+- Fixed bug #1 in Mac binary
 
 ** v0.3 (beta):
 - GUI available for Mac OS X
