@@ -1,7 +1,7 @@
 BayeScEnv
 =========
 
-*Warning !!* The version v1.0 of BayeScEnv had 2 [critical](https://github.com/devillemereuil/bayescenv/issues/2) [bugs](https://github.com/devillemereuil/bayescenv/issues/3). If you were using this version, please update for the v1.1 or later!
+**Warning !!** The version v1.0 of BayeScEnv had 2 [critical](https://github.com/devillemereuil/bayescenv/issues/2) [bugs](https://github.com/devillemereuil/bayescenv/issues/3). If you were using this version, please update for the v1.1 or later!
 
 BayeScEnv is a Fst-based, genome-scan method that uses environmental variables to detect local adaptation.
 
