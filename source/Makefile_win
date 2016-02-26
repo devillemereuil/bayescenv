@@ -1,7 +1,7 @@
 # BayeScan makefile
 
-bayescenv: start.o beta.o dirichlet.o RJupdates.o MHupdates.o likelihood.o read_write.o anyoption.o 
-	i686-w64-mingw32-g++ -fopenmp -lpthread -static-libgcc -static-libstdc++ -O3 -o bayescenv start.o beta.o dirichlet.o RJupdates.o MHupdates.o likelihood.o read_write.o anyoption.o
+bayescenv.exe: start.o beta.o dirichlet.o RJupdates.o MHupdates.o likelihood.o read_write.o anyoption.o 
+	i686-w64-mingw32-g++ -fopenmp -lpthread -static-libgcc -static-libstdc++ -O3 -o bayescenv.exe start.o beta.o dirichlet.o RJupdates.o MHupdates.o likelihood.o read_write.o anyoption.o
 
 start.o: start.cpp errors.cpp anyoption.h global_defs.h
 	i686-w64-mingw32-g++ -fopenmp -O3 -c start.cpp errors.cpp 
@@ -28,4 +28,4 @@ anyoption.o: anyoption.cpp anyoption.h
 	i686-w64-mingw32-g++ -fopenmp -O0 -c anyoption.cpp 
 
 clean: 
-	rm *.o bayescenv
+	rm *.o bayescenv.exe
