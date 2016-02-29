@@ -12,3 +12,7 @@ For documentation and instructions, please see our [Wiki](https://github.com/dev
 To download the program, please go to the [Release page](https://github.com/devillemereuil/bayescenv/releases) and download the latest release as a ZIP or TAR/GZ file.
 
 If you encounter an issue when using the software, please report it [here](https://github.com/devillemereuil/bayescenv/issues).
+
+*Troubleshooting
+
+- On Mac OS X 10.8, BayeScEnv might crash with "Abort 6: trap" error.
