@@ -177,27 +177,33 @@ QString GUI::setup_call()
     //INPUT/OUTPUT section
     if (GUI::ui->inputEdit->text()!="")
     {
+        call.append("\"");
         call.append(GUI::ui->inputEdit->text());
+        call.append("\"");
     } else {
         return "ERROR";
     }
     if (GUI::ui->discEdit->text()!="") {
-        call.append(" -d ");
+        call.append(" -d \"");
         call.append(GUI::ui->discEdit->text());
+        call.append("\"");
     }
     if (GUI::ui->envEdit->text()!=""&&GUI::ui->envEdit->isEnabled()){
-        call.append(" -env ");
+        call.append(" -env \"");
         call.append(GUI::ui->envEdit->text());
+        call.append("\"");
     } else if (!ui->FstatCheckBox->isChecked()) {
         return "ERROR";
     }
     if (GUI::ui->folderoutEdit->text()!="") {
-        call.append(" -od ");
+        call.append(" -od \"");
         call.append(GUI::ui->folderoutEdit->text());
+        call.append("\"");
     }
     if (GUI::ui->nameoutEdit->text()!="") {
-        call.append(" -o ");
+        call.append(" -o \"");
         call.append(GUI::ui->nameoutEdit->text());
+        call.append("\"");
     }
 
     //OPTIONS section
