@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>GUI</class>
  <widget class="QWidget" name="GUI">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>840</width>
-    <height>596</height>
+    <width>939</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="font">
@@ -28,9 +31,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>400</y>
-     <width>821</width>
-     <height>192</height>
+     <y>481</y>
+     <width>921</width>
+     <height>231</height>
     </rect>
    </property>
    <property name="locale">
@@ -40,10 +43,10 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>370</y>
-     <width>178</width>
-     <height>29</height>
+     <x>760</x>
+     <y>440</y>
+     <width>171</width>
+     <height>31</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -72,10 +75,10 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>10</y>
-     <width>161</width>
-     <height>161</height>
+     <x>670</x>
+     <y>0</y>
+     <width>261</width>
+     <height>171</height>
     </rect>
    </property>
    <property name="font">
@@ -93,7 +96,7 @@
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>145</width>
+      <width>231</width>
       <height>141</height>
      </rect>
     </property>
@@ -212,9 +215,9 @@ the allele frequencies?</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>180</y>
-     <width>221</width>
-     <height>211</height>
+     <y>210</y>
+     <width>261</width>
+     <height>261</height>
     </rect>
    </property>
    <property name="font">
@@ -225,15 +228,15 @@ the allele frequencies?</string>
     </font>
    </property>
    <property name="title">
-    <string>Parameters of the MCMC chain</string>
+    <string>MCMC Parameters</string>
    </property>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>29</y>
-      <width>226</width>
-      <height>184</height>
+      <width>248</width>
+      <height>226</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_11">
@@ -339,7 +342,7 @@ for computation</string>
           <locale language="English" country="UnitedStates"/>
          </property>
          <property name="text">
-          <string>Final sample size</string>
+          <string> Final sample size</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -531,10 +534,10 @@ for computation</string>
   <widget class="QGroupBox" name="groupBox_4">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>180</y>
-     <width>341</width>
-     <height>211</height>
+     <x>280</x>
+     <y>210</y>
+     <width>381</width>
+     <height>261</height>
     </rect>
    </property>
    <property name="font">
@@ -552,8 +555,8 @@ for computation</string>
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>326</width>
-      <height>177</height>
+      <width>351</width>
+      <height>221</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_16">
@@ -937,10 +940,10 @@ as a fraction of maximum band intensity</string>
   <widget class="QGroupBox" name="groupBox_5">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>670</x>
      <y>180</y>
-     <width>241</width>
-     <height>181</height>
+     <width>261</width>
+     <height>241</height>
     </rect>
    </property>
    <property name="font">
@@ -956,10 +959,10 @@ as a fraction of maximum band intensity</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>13</x>
+      <x>10</x>
       <y>30</y>
-      <width>224</width>
-      <height>146</height>
+      <width>241</width>
+      <height>201</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -1054,8 +1057,8 @@ non-neutral models</string>
           <locale language="English" country="UnitedStates"/>
          </property>
          <property name="text">
-          <string>Prior preference for the
-locus-specific model</string>
+          <string>Prior preference for
+ locus-specific models</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1247,8 +1250,8 @@ locus-specific model</string>
     <rect>
      <x>12</x>
      <y>2</y>
-     <width>609</width>
-     <height>171</height>
+     <width>651</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="font">
@@ -1266,8 +1269,8 @@ locus-specific model</string>
      <rect>
       <x>0</x>
       <y>30</y>
-      <width>609</width>
-      <height>138</height>
+      <width>641</width>
+      <height>166</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_5">
